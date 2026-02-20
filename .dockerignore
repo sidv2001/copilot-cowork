@@ -1,0 +1,29 @@
+# Dependencies
+node_modules
+frontend/node_modules
+frontend/.next
+
+# Electrobun build output
+build/
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Misc
+README.md
+*.md
