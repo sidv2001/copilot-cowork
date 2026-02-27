@@ -6,7 +6,7 @@
     "dev": "bun run scripts/dev.ts",
     "dev:next": "cd frontend && bun run dev",
     "build:frontend": "cd frontend && bun run build",
-    "build:dev": "bun install && bun run build:frontend && electrobun build",
+    "build:dev": "bun install && electrobun build",
     "build:prod": "bun run scripts/build.ts",
     "start": "bun run build:frontend && bun run build:dev && electrobun dev",
     "postinstall": "cd frontend && bun install"
@@ -18,6 +18,7 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@github/copilot-sdk": "^0.1.25",
     "electrobun": "^1.13.1"
   }
 }

@@ -30,13 +30,10 @@ const buildDev: Subprocess = spawn(["bun", "run", "build:dev"], {
   cwd: rootDir,
   stdout: "inherit",
   stderr: "inherit",
-  // Do NOT set NODE_ENV=development here — Next.js build requires NODE_ENV=production
+  env: { ...process.env, NODE_ENV: "development" },
 });
 
-const buildExitCode = await buildDev.exited;
-if (buildExitCode !== 0) {
-  console.error("[dev] build:dev failed! Continuing to launch Electrobun with previous build artifacts...");
-}
+await buildDev.exited;
 
 const electrobunDev: Subprocess = spawn(["electrobun", "dev"], {
   cwd: rootDir,
